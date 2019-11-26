@@ -18,9 +18,16 @@ body {
     
 }
 
+/* ----- SEARCH BAR ----- */
+
 #search input {
     text-align: center;
     margin-bottom: 2%;
+    transition: width 2s;
+}
+
+#search input:hover {
+    width: 60%;
 }
 
 .search-bar button {
