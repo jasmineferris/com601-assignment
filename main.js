@@ -9,7 +9,7 @@ $(document).ready(function() {
 
 function tooltip(){ //from jQuery examples
 	$("input.tooltip").hover(function(e){
-		$("body").append("<p id='myTooltip'>Enter your 3 digit quote number here. <br> You will find this quote in your emails from us.</p>"); //Appends p tag when hovering over the input field
+		$("body").append("<p id='myTooltip'>Enter any details here to search through your address book</p>"); //Appends p tag when hovering over the input field
 		},
 		function(){
         	$("#myTooltip").remove(); //Tooltip not shown when not being hovered over
