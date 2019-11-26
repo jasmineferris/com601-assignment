@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+    margin: auto;
+    font-family: 'Raleway', sans-serif;
+    box-shadow: none;
+}
+
+body {
+    background: rgb(253,114,114);
+    background: linear-gradient(180deg, rgba(253,114,114,1) 44%, rgba(255,97,155,1) 100%); 
+    color: #fff;
+}
+#address-title {
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Raleway', sans-serif;
+    padding: 3%;
+    
+}
+
+#search input {
+    text-align: left;
+    
+}
+
+.search-bar button {
+  float: right;
+  width: 10%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+}
+
+.search-bar input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 40%;
+  background: #f1f1f1;
+}
+
+.search-bar button:hover {
+  background: #0b7dda;
+}
+
+.search-bar::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+form {
+    display: grid;
+    box-shadow: none;
+}
+
+form input {
+    width: 100%;
+    border-radius: 5px;
+    padding: 3%;
+    box-shadow: none;
+}
+
+label {
+    
+}
+
+ul {
+    list-style: none;
+}
+
+.column {
+    width: 50%;
+    float: left;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+li {
+    padding: 3%;
+}
