@@ -100,3 +100,12 @@ i {
 li {
     padding: 3%;
 }
+
+#myTooltip {
+    position:absolute;
+    padding:2px 5px;
+    color:#fff;
+    font-weight: 600;
+    background-color: #4573d6;
+    border-radius: 5px; 
+}
