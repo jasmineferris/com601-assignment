@@ -43,7 +43,7 @@ body {
 }
 
 .search-bar button:hover {
-  background: #ff3377;
+  background: #ff80aa;
 }
 
 .search-bar::after {
