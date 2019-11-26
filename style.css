@@ -27,7 +27,7 @@ body {
     float: right;
     width: 20%;
     padding: 10px;
-    background: #2196F3;
+    background: #ffccdd;
     color:#fff;
     font-size: 17px;
     border: none;
@@ -43,7 +43,7 @@ body {
 }
 
 .search-bar button:hover {
-  background: #0b7dda;
+  background: #ff3377;
 }
 
 .search-bar::after {
