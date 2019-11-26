@@ -1,3 +1,6 @@
+
+
+
 //------TOOL TIP------//
 //--------------------//
 $(document).ready(function() {
@@ -25,3 +28,6 @@ $(document).ready(function(){ //Calls tooltip function
 	});
 });
 //---------------------------------//
+$(document).ready(function(){ 
+alert("Hello, World!");
+});
