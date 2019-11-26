@@ -48,6 +48,7 @@ body {
     font-size: 17px;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .search-bar button:hover {
@@ -106,6 +107,7 @@ li {
     padding:2px 5px;
     color:#fff;
     font-weight: 600;
-    background-color: #4573d6;
+    background: rgb(0,245,233);
+    background: linear-gradient(180deg, rgba(0,245,233,1) 0%, rgba(30,255,182,1) 100%);
     border-radius: 5px; 
 }
