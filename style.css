@@ -59,6 +59,9 @@ body {
   display: table;
 }
 
+i {
+    margin-left: 10px;
+}
 
 form {
     display: grid;
