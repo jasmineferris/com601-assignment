@@ -13,40 +13,14 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <!--SCRIPTS-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
         <script type="text/javascript" src="main.js"></script>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       
         
         <!-- GOOGLE FONTS -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400&display=swap" rel="stylesheet">
-        
-        <script>
-        $(document).ready(function() {
-	       xOffset = 20; //Position of tooltip on cursor
-	       yOffset = 10;
-
-            function tooltip(){ //from jQuery examples
-	           $("input.tooltip").hover(function(e){
-		          $("body").append("<p id='myTooltip'>Enter any details here that you want to search <br> for in your address book</p>"); //Appends p tag when hovering over the input field
-		          },
-		      function(){
-        	       $("#myTooltip").remove(); //Tooltip not shown when not being hovered over
-		      });
-		
-		      $("input.tooltip").mousemove(function(e){
-			     $("#myTooltip")
-                .css("top",(e.pageY - xOffset) + "px")
-                .css("left",(e.pageX + yOffset) + "px");
-		});
-	}
-        
-            //TOOL TIP FUNCTION//
-            $(document).ready(function(){ //Calls tooltip function
-        tooltip();
-	   });
-        });
-        
-    </script>
 
     </head>
     
