@@ -1,6 +1,3 @@
-
-
-
 //------TOOL TIP------//
 //--------------------//
 $(document).ready(function() {
