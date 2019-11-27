@@ -1,7 +1,7 @@
 <!doctype>
 <html>
     <head>
-        <title>Address</title>
+        <title>Address Book</title>
         
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,8 +17,6 @@
         
         <script type="text/javascript" src="main.js"></script>
         
-       
-        
         <!-- GOOGLE FONTS -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400&display=swap" rel="stylesheet">
 
@@ -32,10 +30,11 @@
         <!-- SEARCH BAR -->
         <section id="search">
             <form class="search-bar" >
-            <input class="tooltip" type="text" placeholder="Enter your search here...">
-                 <button type="submit">Search<i class="fa fa-search"></i></button>
+                <input class="tooltip" type="text" placeholder="Enter your search here...">
+                <button type="submit">Search<i class="fa fa-search"></i></button>
             </form>
         </section>
+        
         <br>
         
         <!-- MAIN FORM -->
@@ -43,45 +42,44 @@
             <form>
                 <div class="row">
                     <div class="column">
-                <ul>
-                    <li>
-                        <label>First Name:</label>
-                            <input type="text" name="firstName" id="firstNameField" required>
-                    </li>
-                    <li>
-                        <label>Last Name:</label>
-                            <input type="text" name="lastName" id="lastNameField" required>
-                        </li>
-                    <li>
-                        <label>Address:</label>
-                            <input type="text" name="address" id="addressField" required>
-                        </li>
-                    <li>
-                        <label>Gender:</label>
-                            <input type="text" name="address" id="addressField" required>
-                        </li>
-                    </div>
-                </ul>
-                    <div class="column">
                     <ul>
-                    <li>
-                        <label>Postcode:</label>
-                            <input type="text" name="postcode" id="postcodeField" required>
+                        <li>
+                            <label>First Name:</label>
+                            <input type="text" name="firstName" id="firstNameField" required>
                         </li>
-                    <li>
-                        <label>Email:</label>
-                            <input type="text" name="email" id="emailField" required>
-                        </li>
-                    <li>
-                        <label>Date of Birth:</label>
-                            <input type="text" name="DOB" id="DOBField" required>
-                        </li>
-                        
-                    <li>
-                        <label>Additional Info:</label>
-                            <input type="text" name="addInfo" id="addInfoField">
-                        </li>
-                </ul>
+                        <li>
+                            <label>Last Name:</label>
+                            <input type="text" name="lastName" id="lastNameField" required>
+                            </li>
+                        <li>
+                            <label>Address:</label>
+                            <input type="text" name="address" id="addressField" required>
+                            </li>
+                        <li>
+                            <label>Gender:</label>
+                            <input type="text" name="address" id="addressField" required>
+                            </li>
+                        </div>
+                    </ul>
+                    <div class="column">
+                        <ul>
+                            <li>
+                                <label>Postcode:</label>
+                                <input type="text" name="postcode" id="postcodeField" required>
+                            </li>
+                            <li>
+                                <label>Email:</label>
+                                <input type="text" name="email" id="emailField" required>
+                            </li>
+                            <li>
+                                <label>Date of Birth:</label>
+                                <input type="text" name="DOB" id="DOBField" required>
+                            </li>
+                            <li>
+                                <label>Additional Info:</label>
+                                <input type="text" name="addInfo" id="addInfoField">
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </form>
