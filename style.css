@@ -28,34 +28,40 @@ body {
 }
 
 #search input:hover {
-    width: 60%;
+    width: 700px;
 }
 
 .search-bar input {
     padding: 10px;
     font-size: 17px;
-    float: left;
     width: 50%;
     background: #f1f1f1;
+    margin-left: 20%;
 }
 
 .search-bar button {
-    float: right;
-    width: 20%;
-    padding: 10px;
+    width: 10%;
+    padding: 11px;
     background: #ffccdd;
     color:#fff;
     font-size: 17px;
     border: none;
-    border-radius: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-left: -4px;
     cursor: pointer;
+}
+
+.search-bar {
+    display: inline;
+    margin: 0;
 }
 
 .search-bar button:hover {
   background: #ff80aa;
 }
 
-.search-bar::after {
+.search-bar:after {
   content: "";
   clear: both;
   display: table;
@@ -70,7 +76,6 @@ form {
 
 form input {
     width: 100%;
-    border-radius: 5px;
     padding: 3%;
     box-shadow: none;
 }
@@ -78,6 +83,8 @@ form input {
 form label {
     font-weight: 700;
 }
+
+
 
 ul {
     list-style: none;
@@ -110,4 +117,18 @@ li {
     background: rgb(0,245,233);
     background: linear-gradient(180deg, rgba(0,245,233,1) 0%, rgba(30,255,182,1) 100%);
     border-radius: 5px; 
+}
+
+.contactBtns {
+    margin-top: 40%;
+    padding: 10px 15px;
+    margin-left: 50px;
+}
+
+.buttons {
+   
+}
+
+#saveContact {
+    
 }
