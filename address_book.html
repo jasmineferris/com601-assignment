@@ -13,12 +13,40 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <!--SCRIPTS-->
+        <script type="text/javascript" src="main.js"></script>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         
         <!-- GOOGLE FONTS -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,400&display=swap" rel="stylesheet">
+        
+        <script>
+        $(document).ready(function() {
+	       xOffset = 20; //Position of tooltip on cursor
+	       yOffset = 10;
 
-
+            function tooltip(){ //from jQuery examples
+	           $("input.tooltip").hover(function(e){
+		          $("body").append("<p id='myTooltip'>Enter any details here that you want to search <br> for in your address book</p>"); //Appends p tag when hovering over the input field
+		          },
+		      function(){
+        	       $("#myTooltip").remove(); //Tooltip not shown when not being hovered over
+		      });
+		
+		      $("input.tooltip").mousemove(function(e){
+			     $("#myTooltip")
+                .css("top",(e.pageY - xOffset) + "px")
+                .css("left",(e.pageX + yOffset) + "px");
+		});
+	}
+        
+            //TOOL TIP FUNCTION//
+            $(document).ready(function(){ //Calls tooltip function
+        tooltip();
+	   });
+        });
+        
+        </script>
 
     </head>
     
@@ -27,13 +55,16 @@
             <h2 id="address-title">Address Book</h2>
         </section>
         
+        <!-- SEARCH BAR -->
         <section id="search">
             <form class="search-bar" >
-            <input type="text" placeholder="Search...">
-                <button type="submit"><i class="fa fa-search"></i></button>
+            <input class="tooltip" type="text" placeholder="Enter your search here...">
+                 <button type="submit">Search<i class="fa fa-search"></i></button>
             </form>
         </section>
         <br>
+        
+        <!-- MAIN FORM -->
         <section id="form">
             <form>
                 <div class="row">

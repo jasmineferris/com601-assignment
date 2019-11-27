@@ -10,28 +10,25 @@ body {
     background: linear-gradient(180deg, rgba(253,114,114,1) 44%, rgba(255,97,155,1) 100%); 
     color: #fff;
 }
+
+/* ----- TITLE ----- */
 #address-title {
     text-align: center;
     font-size: 70px;
     font-family: 'Raleway', sans-serif;
-    padding: 3%;
-    
+    padding: 3%;  
 }
+
+/* ----- SEARCH BAR ----- */
 
 #search input {
     text-align: center;
     margin-bottom: 2%;
+    transition: width 2s;
 }
 
-.search-bar button {
-    float: right;
-    width: 20%;
-    padding: 10px;
-    background: #2196F3;
-    color:#fff;
-    font-size: 17px;
-    border: none;
-    border-radius: 5px;
+#search input:hover {
+    width: 60%;
 }
 
 .search-bar input {
@@ -42,8 +39,20 @@ body {
     background: #f1f1f1;
 }
 
+.search-bar button {
+    float: right;
+    width: 20%;
+    padding: 10px;
+    background: #ffccdd;
+    color:#fff;
+    font-size: 17px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 .search-bar button:hover {
-  background: #0b7dda;
+  background: #ff80aa;
 }
 
 .search-bar::after {
@@ -52,6 +61,7 @@ body {
   display: table;
 }
 
+/* ----- FORM ----- */
 
 form {
     display: grid;
@@ -65,12 +75,16 @@ form input {
     box-shadow: none;
 }
 
-label {
-    
+form label {
+    font-weight: 700;
 }
 
 ul {
     list-style: none;
+}
+
+i {
+    margin-left: 10px;
 }
 
 .column {
@@ -86,4 +100,14 @@ ul {
 
 li {
     padding: 3%;
+}
+
+#myTooltip {
+    position:absolute;
+    padding:2px 5px;
+    color:#fff;
+    font-weight: 600;
+    background: rgb(0,245,233);
+    background: linear-gradient(180deg, rgba(0,245,233,1) 0%, rgba(30,255,182,1) 100%);
+    border-radius: 5px; 
 }
