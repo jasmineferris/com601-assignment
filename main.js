@@ -6,7 +6,7 @@ $(document).ready(function() {
 
 function tooltip(){ //from jQuery examples
 	$("input.tooltip").hover(function(e){
-		$("body").append("<p id='myTooltip'>Enter any details here to search through your address book</p>"); //Appends p tag when hovering over the input field
+		$("body").append("<p id='myTooltip'>Enter any details here that you want to search for <br> in your address book</p>"); //Appends p tag when hovering over the input field
 		},
 		function(){
         	$("#myTooltip").remove(); //Tooltip not shown when not being hovered over
@@ -25,6 +25,3 @@ $(document).ready(function(){ //Calls tooltip function
 	});
 });
 //---------------------------------//
-$(document).ready(function(){ 
-alert("Hello, World!");
-});
