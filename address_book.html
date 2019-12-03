@@ -21,6 +21,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         
+        <!-- JAVASCRIPT FILE -->
         <script type="text/javascript" src="main.js"></script>
         
         <!-- GOOGLE FONTS -->
@@ -36,7 +37,7 @@
         <!-- SEARCH BAR -->
         <section id="search">
             <form class="search-bar" >
-                <input type="text" placeholder="Enter your search here..." data-toggle="tooltip" title="Enter any details here to search in the address book" data-placement="bottom" id="tooltip">
+                <input type="text" placeholder="Enter your search here..." data-toggle="tooltip" title="Enter any details here to search in the address book" data-placement="bottom" id="tooltip"> <!--tooltip incldued here-->
                 <button type="submit">Search<i class="fa fa-search"></i></button>
             </form>
         </section>
@@ -96,6 +97,7 @@
                         <input type="email" id="addInfoField" placeholder="e.g. hello@gmail.com"></textarea>
                     </div>
                 </div>
+                <!--BUTTONS-->
                 <div class="row">
                 <div class="col-sm-2">
                     <button type="button" class="btn btn-primary px-4 float-right" id="saveBtn">Save</button>
@@ -107,14 +109,15 @@
                     <button type="button" class="btn btn-primary px-4 float-right" id="updateBtn">Update</button>
                 </div>
                 </div>
-            </form>
+            </form><!-- End of FORM -->
             </div>
         </div>
-        </div> <!--closing container-->
+        </div> <!--Closing container-->
         
+        <!-- TABLE -->
         <div class="container py-5">
-        <table class="table">
-            <thead>
+        <table class="table table-hover">
+            <thead> <!--header-->
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">First Name</th>
@@ -143,6 +146,6 @@
             </tr>
             </tbody>
             </table>
-        </div>
+        </div> <!-- End of table container -->
     </body>
 </html>
