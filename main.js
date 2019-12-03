@@ -1,6 +1,6 @@
 //------TOOL TIP------//
 //--------------------//
-$(document).ready(function() {
+/*$(document).ready(function() {
 	xOffset = 20; //Position of tooltip on cursor
 	yOffset = 10;
 
@@ -24,4 +24,10 @@ $(document).ready(function(){ //Calls tooltip function
     tooltip();
 	});
 });
-//---------------------------------//
+//---------------------------------//*/
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip({html:true});
+});
+
+
