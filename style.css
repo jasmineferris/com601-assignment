@@ -35,8 +35,10 @@ body {
     padding: 10px;
     font-size: 17px;
     width: 50%;
-    background: #f1f1f1;
+    background: #fff;
     margin-left: 20%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 
 .search-bar button {
@@ -58,7 +60,7 @@ body {
 }
 
 .search-bar button:hover {
-  background: #ff80aa;
+  background: #F0136A;
 }
 
 .search-bar:after {
@@ -72,41 +74,18 @@ body {
 form {
     display: grid;
     box-shadow: none;
+    padding-bottom: 10%;
+    border-radius: 7px;
 }
 
 form input {
     width: 100%;
-    padding: 3%;
+    padding: 5px;
     box-shadow: none;
 }
 
-form label {
-    font-weight: 700;
-}
-
-
-
-ul {
-    list-style: none;
-}
-
-i {
-    margin-left: 10px;
-}
-
-.column {
-    width: 50%;
-    float: left;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-li {
-    padding: 3%;
+#form input {
+   border-radius: 7px; 
 }
 
 #myTooltip {
@@ -119,23 +98,42 @@ li {
     border-radius: 5px; 
 }
 
-.contactBtns {
-    margin-top: 30px;
-    margin-bottom: 10%;
-    padding: 15px 35px;
+.tooltip-inner {
+    background-color: #FF126F;
+}
+
+.tooltip.bs-tooltip-right .arrow:before {
+    border-right-color: #FF126F!important;
+}
+
+.tooltip.bs-tooltip-left .arrow:before {
+    border-left-color: #FF126F !important;
+}
+
+.tooltip.bs-tooltip-bottom .arrow:before {
+    border-bottom-color: #FF126F !important;
+}
+
+.tooltip.bs-tooltip-top .arrow:before {
+    border-top-color: #FF126F !important;
+}
+
+#saveBtn, #deleteBtn, #updateBtn {
+    background-color: #FF126F;
     border-radius: 7px;
-    font-size: 17px;
-    margin: auto 0;
-    margin-left: 90px;
-    margin-right: 50px;
-    cursor: pointer;
-    border: 3px solid rgb(0,255,243);
-    color: #fff;
-    font-weight: 900;
-    background-color: #6564DB; 
+    border: none;
+    width: 150px;
 }
 
-.buttons {
-    padding-top: 7%;
+#saveBtn:hover, #deleteBtn:hover, #updateBtn:hover {
+    background-color: #F0136A;
 }
 
+.table {
+    background-color: #fff;
+    border-radius: 7px;
+}
+
+i {
+    padding: 5px;
+}
