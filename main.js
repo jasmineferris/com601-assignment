@@ -31,3 +31,28 @@ $(document).ready(function(){
 });
 
 
+$(document).ready(function(){
+	$("#searchBtn").click(function GetJSONData(event){
+
+		$.getJSON('json/data.json', function (data){
+			$.each(data,function(i, data){
+				if (data.first_name ==$("#searchField").val()){
+					$("#firstNameField").val(data.first_name);
+					$("#lastNameField").val(data.last_name);
+					$("#addressField").val(data.address);
+					$("#genderField").val(data.gender);
+					$("#DOBfield").val(data.date_of_birth);
+					$("#cityField").val(data.Magarao);
+					$("#postcodeField").val(data.post_code);
+					$("#mobileField").val(data.number);
+					$("#emailField").val(data.email);
+				} else {
+					alert("error");
+				}
+			});
+			if(("#searchField").val().length==0){
+				alert("error");
+			}
+		});
+	});
+});

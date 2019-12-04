@@ -36,8 +36,8 @@
         <!-- SEARCH BAR -->
         <section id="search">
             <form class="search-bar" >
-                <input type="text" placeholder="Enter your search here..." data-toggle="tooltip" title="Enter any details here to search in the address book" data-placement="bottom" id="tooltip">
-                <button type="submit">Search<i class="fa fa-search"></i></button>
+                <input type="text" id="searchField" placeholder="Enter your search here..." data-toggle="tooltip" title="Enter any details here to search in the address book" data-placement="bottom" id="tooltip">
+                <button type="submit" id="searchBtn">Search<i class="fa fa-search"></i></button>
             </form>
         </section>
         
@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label>Gender</label>
-                        <select class="form-control">
+                        <select class="form-control" id="genderField">
                             <option>Female</option>
                             <option>Male</option>
                             <option>Other</option>
@@ -93,7 +93,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label>Email</label>
-                        <input type="email" id="addInfoField" placeholder="e.g. hello@gmail.com"></textarea>
+                        <input type="email" id="emailField" placeholder="e.g. hello@gmail.com"></textarea>
                     </div>
                 </div>
                 <div class="row">
