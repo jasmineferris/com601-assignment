@@ -1,39 +1,18 @@
+//---------ADDRESS FORM SCRIPT FILE--------//
+//-----------------------------------------//
+
+
 //------TOOL TIP------//
 //--------------------//
-/*$(document).ready(function() {
-	xOffset = 20; //Position of tooltip on cursor
-	yOffset = 10;
-
-function tooltip(){ //from jQuery examples
-	$("input.tooltip").hover(function(e){
-		$("body").append("<p id='myTooltip'>Enter any details here that you want to search for <br> in your address book</p>"); //Appends p tag when hovering over the input field
-		},
-		function(){
-        	$("#myTooltip").remove(); //Tooltip not shown when not being hovered over
-		});
-		
-		$("input.tooltip").mousemove(function(e){
-			$("#myTooltip")
-            .css("top",(e.pageY - xOffset) + "px")
-            .css("left",(e.pageX + yOffset) + "px");
-		});
-	}
-        
-//TOOL TIP FUNCTION//
-$(document).ready(function(){ //Calls tooltip function
-    tooltip();
-	});
-});
-//---------------------------------//*/
 
 $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip({html:true});
+    $('[data-toggle="tooltip"]').tooltip({html:true}); //tooltip function. Use data-toggle to refer to the HTML file
 });
 
 
 $(document).ready(function(){
 	$("#searchBtn").click(function GetJSONData(event){
-
+		event.preventDefault();
 		$.getJSON('json/data.json', function (data){
 			$.each(data,function(i, data){
 				if (data.first_name ==$("#searchField").val()){
@@ -42,7 +21,7 @@ $(document).ready(function(){
 					$("#addressField").val(data.address);
 					$("#genderField").val(data.gender);
 					$("#DOBfield").val(data.date_of_birth);
-					$("#cityField").val(data.Magarao);
+					$("#cityField").val(data.city);
 					$("#postcodeField").val(data.post_code);
 					$("#mobileField").val(data.number);
 					$("#emailField").val(data.email);
@@ -55,4 +34,13 @@ $(document).ready(function(){
 			}
 		});
 	});
+});
+//----------------------//
+
+$(document).ready(function(){
+	$.getJSON("json/data.json", function(data){  
+		$.each(data, function(i, data){ 
+		  $("#contactsTable").append(data.firstName + "<br>" + data.lastName);
+	  });
+	  });  
 });
