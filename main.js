@@ -39,8 +39,8 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	$.getJSON("json/data.json", function(data){  
-		$.each(data, function(i, data){ 
-		  $("#contactsTable").append(data.firstName + "<br>" + data.lastName);
+		$.each(data.contacts, function(i, data){ 
+		  $("#contactsTable").append("<div id=" + data.firstname + ">" + data.first_name + " " + data.last_name + "</div> <br/>");
 	  });
-	  });  
+	});  
 });
