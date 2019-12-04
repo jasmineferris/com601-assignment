@@ -40,7 +40,7 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$.getJSON("json/data.json", function(data){  
 		$.each(data.contacts, function(i, data){ 
-		  $("#contactsTable").append("<div id=" + data.firstname + ">" + data.first_name + " " + data.last_name + "</div> <br/>");
+		  $("#contactsTable").append('<tr> <td>' + data.first_name + '</td> <td>' + data.last_name + '</td> <td> ' + data.city + '</td> </tr>');
 	  });
 	});  
 });
