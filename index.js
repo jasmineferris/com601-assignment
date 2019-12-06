@@ -1,3 +1,6 @@
+// Uses JSON Server module
+
+
 const faker = require('faker');
 const fs = require('fs');
 
