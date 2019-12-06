@@ -1,41 +1,31 @@
-var fs = require('fs');
-var express = require('express')
-var app= express()
+const faker = require('faker');
+const fs = require('fs');
 
-app.use('/css', express.static('css'))
-app.use('/js', express.static('js'))
-app.use('/img', express.static('img'))
+function generateContacts(){
+    let users = [];
+    for (let id =1; id <=50; id++){
+        let firstName = faker.name.firstName();
+        let lastName = faker.name.lastName();
+        let email = faker.internet.email();
+        let address = faker.address.city();
+        let date_of_birth = faker.date.past();
+        let city = faker.address.city();
+        let post_code =faker.address.zipCode();
+        let number = faker.phone.phoneNumber();
 
-app.get('/', function(req, res){
-    fs.readFile('index.html', (err, data) => {
-        if (err) throw err;
-        res.writeHead(200);
-        red.write(data);
-        res.end();
-    });
-})
-
-.listen(1337);
-
-var faker = require('faker');
-var fs = require('fs');
-
-var dataArray = [];
-
-for (var i = 0; 1 <50; i++){
-    var data = {};
-    data.first_name = faker.name.firstName();
-    data.last_name = faker.name.lastName();
-    data.email = faker.internet.email();
-    data.address = faker.address.streetAddress();
-    data.date_of_birth = faker.date.past();
-    data.city = faker.address.city();
-    data.post_code = faker.address.zipCode();
-    data.number = faker.phone.phoneNumber();
-    dataArray.push(data);
+        users.push({
+            "first_name": firstName,
+            "last_name": lastName,
+            "email": email,
+            "address": address,
+            "date_of_birth": date_of_birth,
+            "city": city,
+            "post_code": post_code,
+            "number": number
+        });
+    }
+    return {"contacts": users}
 }
 
-fs.writeFile('json/data.json', JSON.stringify(dataArray), (err) => {
-    if (err) throw err;
-    console.log('new file created');
-});
+let dataObj = generateContacts();
+fs.writeFileSync('json/data.json', JSON.stringify(dataObj, null));
