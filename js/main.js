@@ -39,7 +39,8 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$.getJSON("json/data.json", function(data){  
 		$.each(data.contacts, function(i, data){ 
-		  $("#contactsTable").append('<tr id="' + data.id + '"> <td>' + data.first_name + '</td> <td>' + data.last_name + '</td> <td> ' + data.city + '</td> </tr>');
+		  $("#contactsTable").append('<tr id="' + data.id + '" class="tablerow"> <td>' + data.first_name + '</td> <td>' + data.last_name + '</td> <td> ' + data.city + '</td> </tr>');
+		  $("#contactsTable").append('<div class="dropdown"> <td>' + data.gender + '</td> <td>' + data.address + '</td> <td> ' + data.number + '</td> </div>');
 	  });
 	});  
 });
