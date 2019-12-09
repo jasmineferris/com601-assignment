@@ -24,13 +24,14 @@ $(document).ready(function(){
 			$("#emailField").val(data.contacts[tablerowID -1 ].email);
 
 		});
+
+		$("#updateBtn").on("click", function(){
+			$("#tableID").show();
+			$("#search").show();
+			$("#contactForm").hide();
+		});
 	});
 
-	$("#updateBtn").on("click", function(){
-		$("#tableID").show();
-		$("#search").show();
-		$("#contactForm").hide();
-	});
 	
 	$("#deleteBtn").on("click", function(){
 		$("#tableID").show();
