@@ -11,7 +11,7 @@
         <link href="css/style.css" rel="stylesheet">
         
         <!-- FONT AWESOME -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
         
         <!--SCRIPTS-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -36,12 +36,15 @@
         
         <!-- SEARCH BAR -->
         <section id="search">
+        <div class="col-md-12">
             <form class="search-bar" >
-                <input type="text" id="searchField" placeholder="Enter your search here..." data-toggle="tooltip" title="Enter any details here to search in the address book" data-placement="bottom" id="tooltip" onkeyup="searchContacts()">
-                <button type="submit" id="searchBtn">Search<i class="fa fa-search"></i></button>
+                <input type="text" id="searchField" placeholder="&#xf002; Enter your search here..." data-toggle="tooltip" title="Enter any details here to search in the address book" data-placement="bottom" id="tooltip" onkeyup="searchContacts()">
+                <!--<button type="submit" id="searchBtn">Search<i class="fa fa-search"></i></button>-->
                  <!--tooltip incldued here-->
+            </div>
             </form>
         </section>
+
         
         <br>
 

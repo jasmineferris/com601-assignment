@@ -21,52 +21,20 @@ body {
 
 /* ----- SEARCH BAR ----- */
 
-#search input {
+.search-bar input[type=text]{
+    width: 500px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin: auto;
     text-align: center;
-    margin-bottom: 2%;
-    transition: width 2s;
+    border-radius: 10px;
+    background-image: url("searchicon.png");
+    background-position: 50px 50px;
+    background-repeat: no-repeat;
 }
 
-#search input:hover {
+.search-bar input[type=text]:focus {
     width: 700px;
-}
-
-.search-bar input {
-    padding: 10px;
-    font-size: 17px;
-    width: 50%;
-    background: #fff;
-    margin-left: 20%;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-}
-
-.search-bar button {
-    width: 10%;
-    padding: 12px;
-    background: #ffccdd;
-    color:#fff;
-    font-size: 17px;
-    border: none;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    margin-left: -4px;
-    cursor: pointer;
-}
-
-.search-bar {
-    display: inline;
-    margin: 0;
-}
-
-.search-bar button:hover {
-  background: #F0136A;
-}
-
-.search-bar:after {
-  content: "";
-  clear: both;
-  display: table;
 }
 
 /* ----- FORM ----- */
@@ -151,4 +119,8 @@ i {
 
 td:hover {
     cursor: pointer;
+}
+
+input {
+    font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
 }
