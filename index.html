@@ -1,5 +1,4 @@
-
-<!doctype>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Address Book</title>
@@ -92,7 +91,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label>Gender</label>
-                        <select class="form-control">
+                        <select class="form-control" id="genderField">
                             <option>Female</option>
                             <option>Male</option>
                             <option>Other</option>
@@ -112,7 +111,7 @@
                 <div class="form-group row">
                     <div class="col-sm-6">
                         <label>Mobile Number</label>
-                        <input type="number" class="form-control" id="mobileField" placeholder="e.g. 07746398523">
+                        <input class="form-control" id="mobileField" placeholder="e.g. 07746398523">
                     </div>
                     <div class="col-sm-6">
                         <label>Email</label>
@@ -122,10 +121,10 @@
                 <!--BUTTONS-->
                 <div class="row">
                     <div class="col-sm-2">
-                        <button type="button" class="btn btn-primary px-4 float-right" id="updateBtn" onclick="updateContact()">Update</button>
+                        <button type="button" class="btn btn-primary px-4 float-right" id="updateBtn">Update</button>
                     </div>
                     <div class="col-sm-2">
-                        <button type="button" class="btn btn-primary px-4 float-right" id="deleteBtn" onclick="deleteContact()">Delete</button>
+                        <button type="button" class="btn btn-primary px-4 float-right" id="deleteBtn">Delete</button>
                     </div>
                 </div>
             </form><!-- End of FORM -->

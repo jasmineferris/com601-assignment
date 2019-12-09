@@ -2,7 +2,7 @@
 const faker = require('faker');
 const fs = require('fs');
 
-    let genders = [ 'Male' , 'Female', 'Other' ];
+let genders = [ 'Male' , 'Female', 'Other' ];
 
 function generateContacts(){
     let users = [];
