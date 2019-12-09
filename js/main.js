@@ -5,14 +5,25 @@ $(document).ready(function(){
 	$.getJSON("json/data.json", function(data){  
 		$.each(data.contacts, function(i, data){
 		  $("#contactsTable").append('<tr id="' + data.id + '" class="tablerow"> <td>' + data.first_name + '</td> <td>' + data.last_name + '</td> <td> ' + data.city + '</td> </tr>');
-	  });
-	});
+	  	});
+		
+		$(document).on("click", "tbody tr", function(){
+			$("#tableID").hide();
+			$("#search").hide();
+			console.log(this.id);
+			var tablerowID = this.id;
+			console.log(tablerowID);
+			$("#contactForm").show();
+			$("#firstNameField").val(data.contacts[tablerowID -1 ].first_name);
+			$("#lastNameField").val(data.contacts[tablerowID -1 ].last_name);
+			$("#genderField").val(data.contacts[tablerowID -1 ].gender);
+			$("#addressField").val(data.contacts[tablerowID -1 ].address);
+			$("#cityField").val(data.contacts[tablerowID -1 ].city);
+			$("#postcodeField").val(data.contacts[tablerowID -1 ].post_code);
+			$("#mobileField").val(data.contacts[tablerowID -1 ].number);
+			$("#emailField").val(data.contacts[tablerowID -1 ].email);
 
-	$(document).on("click", "tbody tr", function(){
-		$("#tableID").hide();
-		$("#search").hide();
-		console.log(this.id);
-		$("#contactForm").show();
+		});
 	});
 
 	$("#updateBtn").on("click", function(){
