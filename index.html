@@ -37,13 +37,36 @@
         <!-- SEARCH BAR -->
         <section id="search">
             <form class="search-bar" >
-                <input type="text" id="searchField" placeholder="Enter your search here..." data-toggle="tooltip" title="Enter any details here to search in the address book" data-placement="bottom" id="tooltip">
+                <input type="text" id="searchField" placeholder="Enter your search here..." data-toggle="tooltip" title="Enter any details here to search in the address book" data-placement="bottom" id="tooltip" onkeyup="searchContacts()">
                 <button type="submit" id="searchBtn">Search<i class="fa fa-search"></i></button>
                  <!--tooltip incldued here-->
             </form>
         </section>
         
         <br>
+
+        <!-- TABLE -->
+        <div class="container py-5">
+            <div class="animated fadeInDown">
+            <table class="table table-hover">
+                <thead> <!--header-->
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">City</th>
+                </tr>
+                </thead>
+                <tbody id="contactsTable">
+                <!-- <tr>
+                    <th scope="row">1</th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr> -->
+                </tbody>
+                </table>
+                </div>
+            </div> <!-- End of table container -->
         
         <!-- MAIN FORM -->
         <div class="container py-5">
@@ -110,28 +133,5 @@
             </div>
         </div>
         </div> <!--Closing container-->
-        
-        <!-- TABLE -->
-        <div class="container py-5">
-        <div class="animated fadeInDown">
-        <table class="table table-hover">
-            <thead> <!--header-->
-            <tr>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">City</th>
-            </tr>
-            </thead>
-            <tbody id="contactsTable">
-            <!-- <tr>
-                <th scope="row">1</th>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr> -->
-            </tbody>
-            </table>
-            </div>
-        </div> <!-- End of table container -->
     </body>
 </html>
