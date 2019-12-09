@@ -46,7 +46,7 @@
         <br>
 
         <!-- TABLE -->
-        <div class="container py-5">
+        <div class="container py-5" id="tableID">
             <div class="animated fadeInDown">
             <table class="table table-hover">
                 <thead> <!--header-->
@@ -69,7 +69,7 @@
             </div> <!-- End of table container -->
         
         <!-- MAIN FORM -->
-        <div class="container py-5">
+        <div class="container py-5" id="contactForm">
         <div class="row">
         <div class="col-md-10 mx-auto">
             <form id="form">
@@ -119,15 +119,12 @@
                 </div>
                 <!--BUTTONS-->
                 <div class="row">
-                <div class="col-sm-2">
-                    <button type="button" class="btn btn-primary px-4 float-right" id="saveBtn">Save</button>
-                </div>
-                <div class="col-sm-2">
-                    <button type="button" class="btn btn-primary px-4 float-right" id="deleteBtn">Delete</button>
-                </div>
-                <div class="col-sm-2">
-                    <button type="button" class="btn btn-primary px-4 float-right" id="updateBtn">Update</button>
-                </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary px-4 float-right" id="updateBtn" onclick="updateContact()">Update</button>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary px-4 float-right" id="deleteBtn" onclick="deleteContact()">Delete</button>
+                    </div>
                 </div>
             </form><!-- End of FORM -->
             </div>

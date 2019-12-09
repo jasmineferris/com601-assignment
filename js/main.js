@@ -6,7 +6,8 @@
 //--------------------//
 
 $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip({html:true}); //tooltip function. Use data-toggle to refer to the HTML file
+	$('[data-toggle="tooltip"]').tooltip({html:true}); //tooltip function. Use data-toggle to refer to the HTML file
+	$('#contactForm').hide();
 });
 
 
@@ -39,25 +40,46 @@ $(document).ready(function(){
 $(document).ready(function(){
 	$.getJSON("json/data.json", function(data){  
 		$.each(data.contacts, function(i, data){ 
-		  $("#contactsTable").append('<tr id="' + data.id + '" class="tablerow"> <td>' + data.first_name + '</td> <td>' + data.last_name + '</td> <td> ' + data.city + '</td> </tr>');
-		//   $("#contactsTable").append('<div class="dropdown"> <td>' + data.gender + '</td> <td>' + data.address + '</td> <td> ' + data.number + '</td> </div>');
+		  $("#contactsTable").append('<tr id="' + data.id + '" class="tablerow" onClick="showMoreInfo()"> <td>' + data.first_name + '</td> <td>' + data.last_name + '</td> <td> ' + data.city + '</td> </tr>');
+		  //$("#contactsTable").append('<div class="dropdown"> <td>' + data.gender + '</td> <td>' + data.address + '</td> <td> ' + data.number + '</td> </div>');
 	  });
 	});  
 });
 
+// https://www.w3schools.com/howto/howto_js_filter_lists.asp
 function searchContacts() {
     var input, filter, tableBody, tr, a, i, txtValue;
     input = document.getElementById("searchField");
     filter = input.value.toUpperCase();
     tableBody = document.getElementById("contactsTable");
-    tr = tableBody.getElementsByTagName("tr");
+	tr = tableBody.getElementsByTagName("tr");
     for (i = 0; i < tr.length; i++) {
         a = tr[i].getElementsByTagName("td")[0];
         txtValue = a.textContent || a.innerText;
         if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
+			tr[i].style.display = "";
         } else {
-            tr[i].style.display = "none";
+			tr[i].style.display = "none";
         }
     }
+}
+
+function showMoreInfo(){
+	$("#tableID").hide();
+	$("#search").hide();
+	$("#contactForm").show();
+}
+
+function hideMoreInfo(){
+	$("#tableID").show();
+	$("#search").show();
+	$("#contactForm").hide();
+}
+
+function updateContact(){
+	hideMoreInfo();
+}
+
+function deleteContact(){
+	hideMoreInfo();
 }
