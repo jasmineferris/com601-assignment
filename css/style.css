@@ -76,6 +76,7 @@ form {
     box-shadow: none;
     padding-bottom: 10%;
     border-radius: 7px;
+
 }
 
 form input {
@@ -142,4 +143,8 @@ i {
 #sortBtn {
     box-shadow: none;
     margin: 2%;
+}
+
+#tableID {
+    width: 75%;
 }

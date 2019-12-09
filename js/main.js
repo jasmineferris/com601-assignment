@@ -110,4 +110,6 @@ function sortTable(){
 		  }
 	  }
 	  document.getElementById("sortBtn").style.backgroundColor = "#F0136A";
+	  $("#sortBtn").text("Sorted A to Z");
+	  
 	}
