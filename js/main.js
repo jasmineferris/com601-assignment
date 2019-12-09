@@ -11,6 +11,7 @@ $(document).ready(function(){
 	$(document).on("click", "tbody tr", function(){
 		$("#tableID").hide();
 		$("#search").hide();
+		console.log(this.id);
 		$("#contactForm").show();
 	});
 
