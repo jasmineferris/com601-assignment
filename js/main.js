@@ -83,6 +83,7 @@ function updateContact(){
 function deleteContact(){
 	hideMoreInfo();
 }
+
 //https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table
 function sortTable(){
 	var table, rows, switching, i, x, y, shouldSwitch;
@@ -108,4 +109,5 @@ function sortTable(){
 			switching = true;
 		  }
 	  }
+	  document.getElementById("sortBtn").style.backgroundColor = "#F0136A";
 	}
