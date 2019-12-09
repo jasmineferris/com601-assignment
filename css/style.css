@@ -43,7 +43,7 @@ body {
 
 .search-bar button {
     width: 10%;
-    padding: 11px;
+    padding: 12px;
     background: #ffccdd;
     color:#fff;
     font-size: 17px;
@@ -76,6 +76,7 @@ form {
     box-shadow: none;
     padding-bottom: 10%;
     border-radius: 7px;
+
 }
 
 form input {
@@ -142,4 +143,8 @@ i {
 #sortBtn {
     box-shadow: none;
     margin: 2%;
+}
+
+#tableID {
+    width: 75%;
 }
