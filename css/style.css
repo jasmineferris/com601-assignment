@@ -1,3 +1,5 @@
+/* ------ COM601 ASSIGNMENT 2 STYLESHEET ------- */
+
 * {
     box-sizing: border-box;
     margin: auto;
@@ -28,14 +30,37 @@ body {
     margin: auto;
     text-align: center;
     border-radius: 10px;
-    background-image: url("searchicon.png");
-    background-position: 50px 50px;
-    background-repeat: no-repeat;
 }
 
 .search-bar input[type=text]:focus {
     width: 700px;
 }
+
+input {
+    font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
+}
+
+/* ----------------------- */
+
+/* ------- TABLE --------- */
+.table {
+    background-color: #fff;
+    border-radius: 7px;
+}
+
+#sortBtn {
+    box-shadow: none;
+    margin: 2%;
+}
+
+#tableID {
+    width: 65%;
+}
+
+td:hover {
+    cursor: pointer;
+}
+/* -------------------- */
 
 /* ----- FORM ----- */
 
@@ -57,6 +82,8 @@ form input {
    border-radius: 7px; 
 }
 
+/* ----- TOOLTIP ------*/
+
 #myTooltip {
     position:absolute;
     padding:2px 5px;
@@ -71,22 +98,13 @@ form input {
     background-color: #FF126F;
 }
 
-.tooltip.bs-tooltip-right .arrow:before {
-    border-right-color: #FF126F!important;
-}
-
-.tooltip.bs-tooltip-left .arrow:before {
-    border-left-color: #FF126F !important;
-}
-
 .tooltip.bs-tooltip-bottom .arrow:before {
     border-bottom-color: #FF126F !important;
 }
 
-.tooltip.bs-tooltip-top .arrow:before {
-    border-top-color: #FF126F !important;
-}
+/* ----------------------- */
 
+/* --------UPDATE AND DELETE BUTTONS --------- */
 #saveBtn, #deleteBtn, #updateBtn, #sortBtn {
     background-color: #FF126F;
     border-radius: 7px;
@@ -99,28 +117,5 @@ form input {
     background-color: #F0136A;
 }
 
-.table {
-    background-color: #fff;
-    border-radius: 7px;
-}
+/* --------------------- */
 
-i {
-    padding: 5px;
-}
-
-#sortBtn {
-    box-shadow: none;
-    margin: 2%;
-}
-
-#tableID {
-    width: 65%;
-}
-
-td:hover {
-    cursor: pointer;
-}
-
-input {
-    font-family: FontAwesome, "Open Sans", Verdana, sans-serif;
-}
