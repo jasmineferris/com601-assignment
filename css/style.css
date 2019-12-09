@@ -118,14 +118,15 @@ form input {
     border-top-color: #FF126F !important;
 }
 
-#saveBtn, #deleteBtn, #updateBtn {
+#saveBtn, #deleteBtn, #updateBtn, #sortBtn {
     background-color: #FF126F;
     border-radius: 7px;
     border: none;
     width: 150px;
+    color: #fff;
 }
 
-#saveBtn:hover, #deleteBtn:hover, #updateBtn:hover {
+#saveBtn:hover, #deleteBtn:hover, #updateBtn:hover, #sortBtn:hover {
     background-color: #F0136A;
 }
 
@@ -136,4 +137,9 @@ form input {
 
 i {
     padding: 5px;
+}
+
+#sortBtn {
+    box-shadow: none;
+    margin: 2%;
 }
