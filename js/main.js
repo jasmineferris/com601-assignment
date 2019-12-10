@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 	// Loads in the JSON data and displays it in a table.
 	// The event handlers for functions relating to the JSON data (add and delete) are nested here because they're using the JSON data.
-	$.getJSON("json/data.json", function(data){
+	$.getJSON("/getContacts", function(data){
 		// Loops through each of the objects in the JSON file.
 		$.each(data.contacts, function(i, data){
 			// Appends a new table row for each contact and displays a contact's data within it. It also assigns an ID to the row that corresponds to the JSON object being placed in it. 
@@ -64,6 +64,10 @@ $(document).ready(function(){
 				$("#tableID").show();
 				$("#search").show();
 				$("#contactForm").hide();
+
+				$.post('/deleteContact', {id:tablerowID}, function(data){
+					console.log('data gone');
+				})
 			});
 		});
 	});
