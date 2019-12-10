@@ -1,7 +1,7 @@
 {
   "name": "com601-assignment",
   "version": "1.0.0",
-  "description": "",
+  "description": "COM601 Assignment 2",
   "main": "index.js",
   "dependencies": {
     "express": "^4.17.1",
@@ -11,7 +11,9 @@
     "json-server": "^0.15.1",
     "node": "^13.3.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

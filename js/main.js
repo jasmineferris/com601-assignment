@@ -39,9 +39,6 @@ $(document).ready(function(){
 			// When the update button is clicked, the entered data is placed into the JSON file.
 			// The contact information form is hidden and the search bar and contact table is shown again.
 			$("#updateBtn").on("click", function(){
-				$("#tableID").show();
-				$("#search").show();
-				$("#contactForm").hide();
 				data.contacts[tablerowID].first_name = $('#firstNameField').val;
 				data.contacts[tablerowID].last_name = $('#lastNameField').val;
 				data.contacts[tablerowID].gender = $('#genderField').val;
@@ -50,6 +47,9 @@ $(document).ready(function(){
 				data.contacts[tablerowID].post_code = $('#postcodeField').val;
 				data.contacts[tablerowID].phone = $('#mobileField').val;
 				data.contacts[tablerowID].email = $('#emailField').val;
+				$("#tableID").show();
+				$("#search").show();
+				$("#contactForm").hide();
 			});
 
 			$("#backBtn").on("click", function(){
