@@ -5,7 +5,6 @@
 // Pulls in Node.JS modules and makes them required.
 const faker = require('faker');
 const fs = require('fs');
-const app = express();
 
 // Faker doesn't have a predefined gender or sex methods, so this piece of code allows us to generate a random gender. 
 let genders = [ 'Male' , 'Female', 'Other' ];
