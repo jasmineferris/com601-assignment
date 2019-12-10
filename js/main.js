@@ -1,18 +1,30 @@
 $(document).ready(function(){
-	$('[data-toggle="tooltip"]').tooltip({html:true}); //tooltip function. Use data-toggle to refer to the HTML file
+	// Tooltip function. Uses the pre-coded Bootstrap capability (data-toggle).
+	// https://getbootstrap.com/docs/4.1/components/tooltips/
+	$('[data-toggle="tooltip"]').tooltip({html:true});
+	
+	// Hides the contact info form upon page load.
 	$('#contactForm').hide();
 
-	$.getJSON("json/data.json", function(data){  
+	// Loads in the JSON data and displays it in a table.
+	// The event handlers for functions relating to the JSON data (add and delete) are nested here because they're using the JSON data.
+	$.getJSON("json/data.json", function(data){
+		// Loops through each of the objects in the JSON file.
 		$.each(data.contacts, function(i, data){
+			// Appends a new table row for each contact and displays a contact's data within it. It also assigns an ID to the row that corresponds to the JSON object being placed in it. 
 			$("#contactsTable").append('<tr id="' + data.id + '" class="tablerow"> <td>' + data.first_name + '</td> <td>' + data.last_name + '</td> <td> ' + data.city + '</td> </tr>');
 	  	});
 		
+		// When a contact in the table is clicked on, this function fires. It places the relevent user data into the contact details form.
 		$(document).on("click", "tbody tr", function(){
+			// Hides the search bar and contact table.
 			$("#tableID").hide();
 			$("#search").hide();
+			// Gets the ID of the row that was clicked on.
 			console.log(this.id);
 			var tablerowID = this.id;
 			console.log(tablerowID);
+			// Shows the contact form and pulls the relevent contact information from the JSON file.
 			$("#contactForm").show();
 			$("#firstNameField").val(data.contacts[tablerowID -1 ].first_name);
 			$("#lastNameField").val(data.contacts[tablerowID -1 ].last_name);
@@ -25,21 +37,25 @@ $(document).ready(function(){
 
 		});
 
+		// When the update button is clicked, the entered data is placed into the JSON file.
+		// The contact information form is hidden and the search bar and contact table is shown again.
 		$("#updateBtn").on("click", function(){
 			$("#tableID").show();
 			$("#search").show();
 			$("#contactForm").hide();
 		});
-	});
 
-	
-	$("#deleteBtn").on("click", function(){
-		$("#tableID").show();
-		$("#search").show();
-		$("#contactForm").hide();
+		// When the delete button is clicked, the selected contact is deleted from the JSON file.
+		// The contact information form is hidden and the search bar and contact table is shown again.
+		$("#deleteBtn").on("click", function(){
+			$("#tableID").show();
+			$("#search").show();
+			$("#contactForm").hide();
+		});
 	});
 });
 
+// Function that searches through the table when a key is entered into the search bar.
 // https://www.w3schools.com/howto/howto_js_filter_lists.asp
 function searchContacts() {
     var input, filter, tableBody, tr, a, i, txtValue;
@@ -58,29 +74,31 @@ function searchContacts() {
     }
 }
 
-//https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table
+// Function that sorts the table alphabetically by first name when a button is clicked.
+// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table
 function sortTable(){
 	var table, rows, switching, i, x, y, shouldSwitch;
   	table = document.getElementById("contactsTable");
 	switching = true;
 	  
 	while (switching) {
-	  switching = false;
-	  rows = table.rows;
-	  for (i = 0; i < (rows.length - 1); i++) {
-		  shouldSwitch = false;
-			x = rows[i].getElementsByTagName("td")[0];
-		  	y = rows[i + 1].getElementsByTagName("td")[0];
-		  if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
-			shouldSwitch = true;
-			break;
-		  }
+		switching = false;
+	  	rows = table.rows;
+	  	for (i = 0; i < (rows.length - 1); i++) {
+			shouldSwitch = false;
+				x = rows[i].getElementsByTagName("td")[0];
+		  		y = rows[i + 1].getElementsByTagName("td")[0];
+		  	if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+				shouldSwitch = true;
+				break;
+		  	}
+	  	}
+	  	if (shouldSwitch) {
+			rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+			switching = true;
+	  	}
 	  }
-	  if (shouldSwitch) {
-		rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-		switching = true;
-	  }
-  }
+	// Changes text content of box to reflect the sort state.
   	document.getElementById("sortBtn").style.backgroundColor = "#F0136A";
-	  $("#sortBtn").text("Sorted A to Z");
+	$("#sortBtn").text("Sorted A to Z");
 }
