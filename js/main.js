@@ -18,7 +18,7 @@ $(document).ready(function(){
 		
 		// When a contact in the table is clicked on, this function fires. It places the relevent user data into the contact details form.
 		$(document).on("click", "tbody tr", function(){
-			// Hides the search bar and contact table.
+			// Hides the search bar and contact table
 			$("#tableID").hide();
 			$("#search").hide();
 			// Gets the ID of the row that was clicked on.

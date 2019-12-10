@@ -77,7 +77,7 @@ app.post('/deleteContact', function(req, res){
 
 app.post('/newContact', function(req, res){
     var newContact = {};
-    contactsArray.push(newContact);
+    dataObj.push(newContact);
 });
 
 app.get('/', function(req, res){
@@ -85,6 +85,6 @@ app.get('/', function(req, res){
     res.write(data);   
     res.end();                                                           
     });                                                                     
-})
+});
 
 app.listen(1337);
