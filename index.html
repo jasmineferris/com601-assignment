@@ -49,6 +49,7 @@
         <div class="animated fadeInDown">
             <table class="table table-hover">
                 <button onclick="sortTable()" id="sortBtn">Sort - A to Z</button>
+                <lable id ="numOfResults"></lable>
                 <thead> <!--header-->
                     <tr>
                         <th scope="col">First Name</th>
@@ -114,10 +115,13 @@
                     <!--BUTTONS-->
                     <div class="row">
                         <div class="col-sm-2">
-                            <button type="button" class="btn btn-primary px-4 float-right" id="updateBtn">Update</button>
+                            <button type="button" class="btn btn-primary px-4 float-right" id="backBtn">Back</button>
                         </div>
                         <div class="col-sm-2">
                             <button type="button" class="btn btn-primary px-4 float-right" id="deleteBtn">Delete</button>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary px-4 float-right" id="updateBtn">Update</button>
                         </div>
                     </div>
                 </form><!-- End of FORM -->

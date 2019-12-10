@@ -13,7 +13,8 @@ $(document).ready(function(){
 		$.each(data.contacts, function(i, data){
 			// Appends a new table row for each contact and displays a contact's data within it. It also assigns an ID to the row that corresponds to the JSON object being placed in it. 
 			$("#contactsTable").append('<tr id="' + data.id + '" class="tablerow"> <td>' + data.first_name + '</td> <td>' + data.last_name + '</td> <td> ' + data.city + '</td> </tr>');
-	  	});
+		  });
+
 		
 		// When a contact in the table is clicked on, this function fires. It places the relevent user data into the contact details form.
 		$(document).on("click", "tbody tr", function(){
@@ -35,22 +36,35 @@ $(document).ready(function(){
 			$("#mobileField").val(data.contacts[tablerowID -1 ].number);
 			$("#emailField").val(data.contacts[tablerowID -1 ].email);
 
-		});
+			// When the update button is clicked, the entered data is placed into the JSON file.
+			// The contact information form is hidden and the search bar and contact table is shown again.
+			$("#updateBtn").on("click", function(){
+				$("#tableID").show();
+				$("#search").show();
+				$("#contactForm").hide();
+				data.contacts[tablerowID].first_name = $('#firstNameField').val;
+				data.contacts[tablerowID].last_name = $('#lastNameField').val;
+				data.contacts[tablerowID].gender = $('#genderField').val;
+				data.contacts[tablerowID].address = $('#addressField').val;
+				data.contacts[tablerowID].city = $('#cityField').val;
+				data.contacts[tablerowID].post_code = $('#postcodeField').val;
+				data.contacts[tablerowID].phone = $('#mobileField').val;
+				data.contacts[tablerowID].email = $('#emailField').val;
+			});
 
-		// When the update button is clicked, the entered data is placed into the JSON file.
-		// The contact information form is hidden and the search bar and contact table is shown again.
-		$("#updateBtn").on("click", function(){
-			$("#tableID").show();
-			$("#search").show();
-			$("#contactForm").hide();
-		});
+			$("#backBtn").on("click", function(){
+				$("#tableID").show();
+				$("#search").show();
+				$("#contactForm").hide();
+			});
 
-		// When the delete button is clicked, the selected contact is deleted from the JSON file.
-		// The contact information form is hidden and the search bar and contact table is shown again.
-		$("#deleteBtn").on("click", function(){
-			$("#tableID").show();
-			$("#search").show();
-			$("#contactForm").hide();
+			// When the delete button is clicked, the selected contact is deleted from the JSON file.
+			// The contact information form is hidden and the search bar and contact table is shown again.
+			$("#deleteBtn").on("click", function(){
+				$("#tableID").show();
+				$("#search").show();
+				$("#contactForm").hide();
+			});
 		});
 	});
 });
@@ -71,7 +85,10 @@ function searchContacts() {
         } else {
 			tr[i].style.display = "none";
         }
-    }
+	}
+	
+	var numOfRows = $("table tr:visible").length;
+	$("#numOfResults").text((numOfRows -1) + " results found.")
 }
 
 // Function that sorts the table alphabetically by first name when a button is clicked.
