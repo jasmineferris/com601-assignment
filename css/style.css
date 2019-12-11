@@ -40,6 +40,14 @@ input {
     font-family: FontAwesome, 'Raleway', sans-serif;
 }
 
+#infoBox {
+    position: fixed;
+    border-radius:1em;
+    padding:1em;
+    background-color: #FF126F;
+    color: #fff;
+}
+
 /* ----------------------- */
 
 /* ------- TABLE --------- */

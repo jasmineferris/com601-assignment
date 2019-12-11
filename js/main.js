@@ -6,50 +6,83 @@ $(document).ready(function(){
 	// Hides the contact info form upon page load.
 	$('#contactForm').hide();
 
+	var contactIndex;
+	var contactID =[];
+	var firstName = [];
+	var lastName = [];
+	var gender = [];
+	var address = [];
+	var city = [];
+	var postCode = [];
+	var mobile = [];
+	var email = [];
+
+	
+
 	// Loads in the JSON data and displays it in a table.
 	// The event handlers for functions relating to the JSON data (add and delete) are nested here because they're using the JSON data.
 	$.getJSON("/getContacts", function(data){
 		// Loops through each of the objects in the JSON file.
 		$.each(data.contacts, function(i, data){
 			// Appends a new table row for each contact and displays a contact's data within it. It also assigns an ID to the row that corresponds to the JSON object being placed in it. 
-			$("#contactsTable").append('<tr id="' + data.id + '" class="tablerow"><td>' + data.first_name + '</td> <td>' + data.last_name + '</td> <td> ' + data.city + '</td> </tr>');
+			contactID.push(data.id);
+			firstName.push(data.first_name);
+			lastName.push(data.last_name);
+			gender.push(data.gender);
+			address.push(data.address);
+			city.push(data.city);
+			postCode.push(data.post_code);
+			mobile.push(data.number);
+			email.push(data.email);
 		});
+
+		for (i = 0; i < contactID.length; i++) {
+			$("#contactsTable").append('<tr id="' + contactID[i] + '" class="tablerow"><td>' + firstName[i] + '</td> <td>' + lastName[i] + '</td> <td> ' + city[i] + '</td> </tr>');
+		  }
 
 		
 		// When a contact in the table is clicked on, this function fires. It places the relevent user data into the contact details form.
-		$(document).on("click", "tbody tr", function(){
+		$(document).on("click", "#contactsTable tr", function(){
 			// Hides the search bar and contact table
 			$("#tableID").hide();
 			$("#search").hide();
 			// Gets the ID of the row that was clicked on.
 			console.log(this.id);
-			var tablerowID = this.id;
-			console.log(tablerowID);
+			contactIndex = this.id;
 			// Shows the contact form and pulls the relevent contact information from the JSON file.
 			$("#contactForm").show();
-			$("#firstNameField").val(data.contacts[tablerowID -1 ].first_name);
-			$("#lastNameField").val(data.contacts[tablerowID -1 ].last_name);
-			$("#genderField").val(data.contacts[tablerowID -1 ].gender);
-			$("#addressField").val(data.contacts[tablerowID -1 ].address);
-			$("#cityField").val(data.contacts[tablerowID -1 ].city);
-			$("#postcodeField").val(data.contacts[tablerowID -1 ].post_code);
-			$("#mobileField").val(data.contacts[tablerowID -1 ].number);
-			$("#emailField").val(data.contacts[tablerowID -1 ].email);
+			$("#firstNameField").val(firstName[contactIndex - 1]);
+			$("#lastNameField").val(lastName[contactIndex -1]);
+			$("#genderField").val(gender[contactIndex -1 ]);
+			$("#addressField").val(address[contactIndex -1 ]);
+			$("#cityField").val(city[contactIndex -1 ]);
+			$("#postcodeField").val(postCode[contactIndex -1 ]);
+			$("#mobileField").val(mobile[contactIndex -1 ]);
+			$("#emailField").val(email[contactIndex -1 ]);
+
+			for (i = 0; i < contactID.length; ++i) {
+				if (city[i] == $("#cityField").val()){
+					$("#relatedContactsTable").append('<tr id="' + contactID[i] + '" class="tablerow"><td>' + firstName[i] + '</td> <td>' + lastName[i] + '</td> <td> ' + city[i] + '</td> </tr>');
+				}
+			}
 
 			// When the update button is clicked, the entered data is placed into the JSON file.
 			// The contact information form is hidden and the search bar and contact table is shown again.
 			$("#updateBtn").on("click", function(){
-				data.contacts[tablerowID].first_name = $('#firstNameField').val;
-				data.contacts[tablerowID].last_name = $('#lastNameField').val;
-				data.contacts[tablerowID].gender = $('#genderField').val;
-				data.contacts[tablerowID].address = $('#addressField').val;
-				data.contacts[tablerowID].city = $('#cityField').val;
-				data.contacts[tablerowID].post_code = $('#postcodeField').val;
-				data.contacts[tablerowID].phone = $('#mobileField').val;
-				data.contacts[tablerowID].email = $('#emailField').val;
+				firstName[contactIndex -1] = $('#firstNameField').val;
+				lastName[contactIndex -1] = $('#lastNameField').val;
+				gender[contactIndex-1] = $('#genderField').val;
+				address[contactIndex-1] = $('#addressField').val;
+				city[contactIndex-1] = $('#cityField').val;
+				postCode[contactIndex-1] = $('#postcodeField').val;
+				mobile[contactIndex-1] = $('#mobileField').val;
+				var emailVar = $('#emailField').val;
+				email[contactIndex-1] = emailVar;
+
 				$("#tableID").show();
 				$("#search").show();
 				$("#contactForm").hide();
+				$("#relatedContactsTable").empty();
 			});
 
 			// When the delete button is clicked, the selected contact is deleted from the JSON file.
@@ -62,9 +95,34 @@ $(document).ready(function(){
 				$.post('/deleteContact', {id:tablerowID}, function(data){
 					console.log('data gone');
 				});
+				$("#relatedContactsTable").empty();
 			});
 		});
 	});
+
+	$(document).on("mouseenter", "table .tablerow", function(){
+		$("#infoBox").show();
+		const userIndexString = this.id;
+		var floatingTip = document.getElementById("infoBox");
+        var x, y;
+    	// On mousemove use event.clientX and event.clientY to set the location of the div to the location of the cursor:
+    	window.addEventListener('mousemove', function(event){
+        	x = event.clientX;
+        	y = event.clientY;                    
+        	if ( typeof x !== 'undefined' ){
+            	floatingTip.style.left = (x+20) + "px";
+            	floatingTip.style.top = y + "px";
+        	}
+		}, false);
+
+		$("#infoBoxEmail").text(email[userIndexString -1 ]);
+	});
+
+	$(document).on("mouseleave", "table .tablerow", function(){
+		$("#infoBox").hide();
+	});
+
+	$('#infoBox').hide();
 });
 
 // Function that searches through the table when a key is entered into the search bar.
@@ -122,4 +180,5 @@ function goBack(){
 	$("#tableID").show();
 	$("#search").show();
 	$("#contactForm").hide();
+	$("#relatedContactsTable").empty();
 }

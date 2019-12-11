@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({extended:false}))
 
 // Faker doesn't have a predefined gender or sex methods, so this piece of code allows us to generate a random gender. 
 let genders = [ 'Male' , 'Female', 'Other' ];
+let cities = [ 'Belfast' , 'Derry', 'Dublin', 'Newry', 'Armagh' ];
 
 // Function where the fake contact data is generated.
 function generateContacts(){
@@ -28,7 +29,7 @@ function generateContacts(){
         let gender = faker.random.arrayElement(genders);
         let email = faker.internet.email();
         let address = faker.address.city();
-        let city = faker.address.city();
+        let city = faker.random.arrayElement(cities);
         let post_code =faker.address.zipCode();
         let number = faker.phone.phoneNumber();
 
@@ -55,7 +56,7 @@ let dataObj = generateContacts();
 fs.writeFileSync('json/data.json', JSON.stringify(dataObj, null));
 
 app.get('/getContacts', function(req, res){
-    res.send(dataObj);
+    res.send(JSON.stringify(dataObj, null));
 });
 app.post('/deleteContact', function(req, res){
     var deleteID = req.body.id;

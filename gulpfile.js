@@ -1,11 +1,15 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
+const gulp = require('gulp');
 
-function style(){
-    return(gulp.src("app/scss/*.scss")
-    .pipe(sass())
-    .on("error", sass.logError)
-    .pipe(gulp.dest("app/css")));
-}
+/*
+    -- TOP LEVEL FUNCTIONS --
 
-exports.style = style;
+    gulp.task -- defines tasks
+    gulp.src -- points to files to use
+    gulp.dest -- points to output
+    gulp.watch -- watch files and folders for changes
+*/
+
+// LOGS MESSAGE
+gulp.task('message', function(){
+    return console.log('Gulp is running');
+});
