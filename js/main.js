@@ -52,12 +52,6 @@ $(document).ready(function(){
 				$("#contactForm").hide();
 			});
 
-			$("#backBtn").on("click", function(){
-				$("#tableID").show();
-				$("#search").show();
-				$("#contactForm").hide();
-			});
-
 			// When the delete button is clicked, the selected contact is deleted from the JSON file.
 			// The contact information form is hidden and the search bar and contact table is shown again.
 			$("#deleteBtn").on("click", function(){
@@ -67,7 +61,7 @@ $(document).ready(function(){
 
 				$.post('/deleteContact', {id:tablerowID}, function(data){
 					console.log('data gone');
-				})
+				});
 			});
 		});
 	});
@@ -122,4 +116,10 @@ function sortTable(){
 	// Changes text content of box to reflect the sort state.
   	document.getElementById("sortBtn").style.backgroundColor = "#F0136A";
 	$("#sortBtn").text("Sorted A to Z");
+}
+
+function goBack(){
+	$("#tableID").show();
+	$("#search").show();
+	$("#contactForm").hide();
 }
