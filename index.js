@@ -54,23 +54,16 @@ let dataObj = generateContacts();
 // Writes to the JSON file by placing the contents of 'dataObj' into it. 
 fs.writeFileSync('json/data.json', JSON.stringify(dataObj, null));
 
-fs.readFile('json/data.json', function(err, data){
-    if (err){
-        throw err;
-    }
-    var parseData = JSON.parse(data);
-});
-
 app.get('/getContacts', function(req, res){
     res.send(dataObj);
 });
 app.post('/deleteContact', function(req, res){
-    var id = req.body.id;
-    if(dataObj.length <= id){
+    var deleteID = req.body.id;
+    if(dataObj.contacts.length <= deleteID){
         res.statusCode =404;
         return res.send('Error 404: No contact found.');
     }
-    dataObj.splice(id,1);
+    dataObj.contacts.splice(deleteID,1);
     res.json(true);
     res.end("yes");
 });

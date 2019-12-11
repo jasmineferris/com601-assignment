@@ -13,7 +13,7 @@ $(document).ready(function(){
 		$.each(data.contacts, function(i, data){
 			// Appends a new table row for each contact and displays a contact's data within it. It also assigns an ID to the row that corresponds to the JSON object being placed in it. 
 			$("#contactsTable").append('<tr id="' + data.id + '" class="tablerow"><td>' + data.first_name + '</td> <td>' + data.last_name + '</td> <td> ' + data.city + '</td> </tr>');
-		  });
+		});
 
 		
 		// When a contact in the table is clicked on, this function fires. It places the relevent user data into the contact details form.
