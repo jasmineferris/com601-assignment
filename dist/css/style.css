@@ -1,0 +1,133 @@
+/* ------ COM601 ASSIGNMENT 2 STYLESHEET ------- */
+
+* {
+    box-sizing: border-box;
+    margin: auto;
+    font-family: 'Raleway', sans-serif;
+    box-shadow: none;
+}
+
+body {
+    background: rgb(253,114,114);
+    background: linear-gradient(180deg, rgba(253,114,114,1) 44%, rgba(255,97,155,1) 100%); 
+    color: #fff;
+}
+
+/* ----- TITLE ----- */
+#address-title {
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Raleway', sans-serif;
+    padding: 3%;  
+}
+
+/* ----- SEARCH BAR ----- */
+
+.search-bar input[type=text]{
+    width: 500px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.search-bar input[type=text]:focus {
+    width: 700px;
+}
+
+input {
+    font-family: FontAwesome, 'Raleway', sans-serif;
+}
+
+/* ----------------------- */
+
+/* ------- INFO BOX ------ */
+
+#infoBox {
+    position: fixed;
+    border-radius:1em;
+    padding:1em;
+    background-color: #FF126F;
+    color: #fff;
+}
+
+/* ----------------------- */
+
+/* ------- TABLE --------- */
+.table {
+    background-color: #fff;
+    border-radius: 7px;
+}
+
+#sortBtn {
+    box-shadow: none;
+    margin: 2%;
+}
+
+#tableID {
+    width: 65%;
+}
+
+td:hover {
+    cursor: pointer;
+}
+/* -------------------- */
+
+/* ----- FORM ----- */
+
+form {
+    display: grid;
+    box-shadow: none;
+    padding-bottom: 10%;
+    border-radius: 7px;
+
+}
+
+form input {
+    width: 100%;
+    padding: 5px;
+    box-shadow: none;
+}
+
+#form input {
+   border-radius: 7px; 
+}
+
+/* ----- TOOLTIP ------*/
+
+#myTooltip {
+    position:absolute;
+    padding:2px 5px;
+    color:#fff;
+    font-weight: 600;
+    background: rgb(0,245,233);
+    background: linear-gradient(180deg, rgba(0,245,233,1) 0%, rgba(30,255,182,1) 100%);
+    border-radius: 5px; 
+}
+
+.tooltip-inner {
+    background-color: #FF126F;
+}
+
+.tooltip.bs-tooltip-bottom .arrow:before {
+    border-bottom-color: #FF126F !important;
+}
+
+/* ----------------------- */
+
+/* --------UPDATE AND DELETE BUTTONS --------- */
+#backBtn, #deleteBtn, #updateBtn, #sortBtn {
+    background-color: #FF126F;
+    border-radius: 7px;
+    border: none;
+    width: 150px;
+    color: #fff;
+}
+
+#saveBtn:hover, #deleteBtn:hover, #updateBtn:hover, #sortBtn:hover {
+    background-color: #F0136A;
+}
+
+/* --------------------- */
+

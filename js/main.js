@@ -115,7 +115,7 @@ $(document).ready(function(){
 		// The box is hidden by default in the css file. This shows it.
 		$("#infoBox").show();
 		// Takes the id of the table row currently moused over.
-		const userIndexString = this.id;
+		var userIndexString = this.id;
 		var floatingTip = document.getElementById("infoBox");
         var x, y;
     	window.addEventListener('mousemove', function(event){
