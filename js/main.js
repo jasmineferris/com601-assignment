@@ -146,9 +146,8 @@ $(document).ready(function(){
 // It's fired when a user enters a key into the search bar. it searchs by first name.
 // https://www.w3schools.com/howto/howto_js_filter_lists.asp
 function searchContacts() {
-    var input, filter, tableBody, tr, a, i, txtValue;
-    input = document.getElementById("searchField");
-    filter = input.value.toUpperCase();
+    var filter, tableBody, tr, a, i, txtValue;
+    filter = document.getElementById("searchField").value.toUpperCase();
     tableBody = document.getElementById("contactsTable");
 	tr = tableBody.getElementsByTagName("tr");
     for (i = 0; i < tr.length; i++) {
