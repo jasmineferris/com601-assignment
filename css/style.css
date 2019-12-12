@@ -40,6 +40,10 @@ input {
     font-family: FontAwesome, 'Raleway', sans-serif;
 }
 
+/* ----------------------- */
+
+/* ------- INFO BOX ------ */
+
 #infoBox {
     position: fixed;
     border-radius:1em;
@@ -113,7 +117,7 @@ form input {
 /* ----------------------- */
 
 /* --------UPDATE AND DELETE BUTTONS --------- */
-#saveBtn, #deleteBtn, #updateBtn, #sortBtn {
+#backBtn, #deleteBtn, #updateBtn, #sortBtn {
     background-color: #FF126F;
     border-radius: 7px;
     border: none;

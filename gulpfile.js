@@ -1,4 +1,4 @@
-const gulp = require('gulp');
+var gulp = require('gulp');
 
 /*
     -- TOP LEVEL FUNCTIONS --
@@ -11,5 +11,9 @@ const gulp = require('gulp');
 
 // LOGS MESSAGE
 gulp.task('message', function(){
-    return console.log('Gulp is running');
+    //return console.log('Gulp is running');
+});
+
+gulp.task('default', function(){
+    //return console.log('Gulp is running');
 });
