@@ -166,7 +166,7 @@ function searchContacts() {
 }
 
 // Function that sorts the table alphabetically by first name when a button is clicked.
-// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sort_table
+// https://www.w3schools.com/howto/howto_js_sort_table.asp
 function sortTable(){
 	var table, rows, switching, i, x, y, shouldSwitch;
   	table = document.getElementById("contactsTable");
