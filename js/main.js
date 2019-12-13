@@ -40,6 +40,9 @@ $(document).ready(function(){
 		for (i = 0; i < contactID.length; i++) {
 			$("#contactsTable").append('<tr id="' + contactID[i] + '" class="tablerow"><td>' + firstName[i] + '</td> <td>' + lastName[i] + '</td> <td> ' + city[i] + '</td> </tr>');
 		}
+		// Displays number of contacts showen on the table.
+		var numOfRows = $("table tr:visible").length;
+		$("#numOfResults").text((numOfRows -1) + " results found.")
 
 		
 		// When a contact in the table is clicked on, this function fires.
